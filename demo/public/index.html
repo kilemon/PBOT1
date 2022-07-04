@@ -1,0 +1,82 @@
+<!--
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+/********************************************************************************
+  「プロアクティブメッセージ送信」デモ画面HTML
+*********************************************************************************/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロアクティブ メッセージ送信のデモ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="form0" id="tuser-form">
+        <h4 class="pageTitle0">プロアクティブメッセージ (チャットに"DM"送信)</h4>
+        <h6 class="propertyTitle0" id="destinationTitle">宛先 (メールアドレスで指定)</h6>
+        <div class="form-control">
+            <select class="selection0" id="selectAadObjectId" onchange="destinationOrMessageTextUpdated()">
+                <option value="dummy@email.email">(選択してください)</option>
+            </select>
+        </div>
+        <h6 class="propertyTitle0">メッセージ本文</h6>
+        <div class="form-control">
+            <input class="input0" id="inputMessageText" onchange="destinationOrMessageTextUpdated()">
+            </input>
+        </div>
+        <img class="arrow1" src="./arrow_down.png" width="100pt" height="20pt" />        
+    <h5 class="promptingTitle1">送信前に太枠内を確認してください</h5>
+        <div class="propertiesBlock1">
+            <h6 class="blockTitle1">POSTメソッドの要求本文の内容 (/api/notify宛て)</h6>
+            <h6 class="propertyTitle1">MessageText</h6>
+            <div class="textBox1">
+                <div class="text1" id="messageText"></div>
+            </div>
+            <select class="propertySelection1" id="selectRefContent" onchange="convRefContentSelected()">
+                <option value="conversationRef">ConversationReference全体</option>
+                <option value="conversationIdANDserviceUrl">ConversationIDとServiceURL</option>
+            </select>
+            <div class="property1" id="conversationReference_pre"></div>
+            <div class="property1" id="shortConvRef_pre" style="display: none"></div>
+            <div class="property1" id="conversationReference" style="display: none"></div>
+            <div class="property1" id="conversationId" style="display: none"></div>
+            <div class="property1" id="serviceUrl" style="display: none"></div>
+        </div>
+        <div class="propertiesBlock2">
+            <h6 class="propertyTitle2">displayName</h6>
+            <div class="property2" id="displayName"></div>
+            <h6 class="propertyTitle2">email</h6>
+            <div class="property2" id="email"></div>
+            <h6 class="propertyTitle2">aadObjectId</h6>
+            <div class="property2" id="aadObjectId"></div>
+            <h6 class="propertyTitle2">userPrincipalName</h6>
+            <div class="property2" id="userPrincipalName"></div>
+            <h6 class="propertyTitle2">givenName</h6>
+            <div class="property2" id="givenName"></div>
+            <h6 class="propertyTitle2">surname</h6>
+            <div class="property2" id="surname"></div>
+            <h6 class="propertyTitle2">jobTitle</h6>
+            <div class="property2" id="jobTitle"></div>
+            <h6 class="propertyTitle2">officeLocation</h6>
+            <div class="property2" id="officeLocation"></div>
+            <h6 class="propertyTitle2">preferredLanguage</h6>
+            <div class="property2" id="preferredLanguage"></div>
+            <h6 class="propertyTitle2">mobilePhone</h6>
+            <div class="property2" id="mobilePhone"></div>
+            <h6 class="propertyTitle2">timeStamp</h6>
+            <div class="property2" id="timeStamp"></div>
+        </div>
+        <button type="submit" class="btn submit-btn">送信</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

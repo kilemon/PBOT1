@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@microsoft/teams-js": "^1.11.0",
+    "@microsoft/teamsfx": "^0.6.1",
+    "cors": "^2.8.5",
+    "date-fns-timezone": "^0.1.4",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2"
+  }
+}

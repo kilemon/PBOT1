@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.11/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.11",
+  "version": "1.0.0",
+  "id": "{{TAB_APPID}}",
+  "packageName": "com.contoso.pbot1",
+  "webApplicationInfo": {
+    "id": "{{BOT_APPID}}",
+    "resource": "api://{{TAB_NGROK_DOMAIN}}/botid-{{BOT_APPID}}"
+},
+  "developer": {
+    "name": "Microsoft",
+    "websiteUrl": "https://microsoft.com",
+    "privacyUrl": "https://privacy.microsoft.com",
+    "termsOfUseUrl": "https://microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx"
+  },
+  "icons": {
+    "color": "icon-color.png",
+    "outline": "icon-outline.png"
+  },
+  "name": {
+    "short": "PBOT1"
+  },
+  "description": {
+    "short": "The app demonstrates how to send a proactive message from Teams bots",
+    "full": "The trigger is sent via a HTTP POST request to the api endpoint when clicking the submit button on the tab/web page. It restarts the conversation, i.e. sending the user the message specified in the request, by passing the conversation reference to the continueConversation method from Bot Framework Adapter."
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    {
+      "entityId": "com.contoso.pbot1",
+      "name": "PBOT1 Tab",
+      "contentUrl": "https://{{TAB_NGROK_DOMAIN}}",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "{{BOT_APPID}}",
+      "scopes": [
+        "personal"
+      ],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "*.githubusercontent.com",
+    "*.botframework.com",
+    "*.ngrok.io"
+  ]
+}

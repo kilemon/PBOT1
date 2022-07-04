@@ -1,0 +1,1 @@
+ngrok http 4001 -host-header="localhost:4001" --subdomain {{BOT_DOMAIN_PREFIX}} --region=jp

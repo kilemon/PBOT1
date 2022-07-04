@@ -1,0 +1,1 @@
+ngrok http 3978 -host-header="localhost:3978" --subdomain {{TAB_DOMAIN_PREFIX}} --region=jp
